@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js"
+  },
+  "type": "commonjs",
+  "name": "notion-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
