@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const notion = require("../services/notion");
+const notion = require("./services/notion");
 const app = express();
 
 app.get("/database", async (req, res) => {
