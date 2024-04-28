@@ -6,18 +6,23 @@ const app = express();
 
 app.use(cors());
 
-app.get("/", async (req, res) => {
+app.get("/", async (_, res) => {
   res.send("welcome to my notion-api hehe :))");
 });
 
-app.get("/database", async (req, res) => {
+app.get("/database", async (_, res) => {
   const data = await notion.getDatabase();
   res.send(data);
 });
 
-app.get("/articles", async (req, res) => {
-  const pages = await notion.getDatabaseContent();
-  const pageContent = await notion.getPageContent(pages[0]);
+app.get("/articles", async (_, res) => {
+  const articles = await notion.getListOfArticles();
+  res.send(articles);
+});
+
+app.get("/article/:id", async (req, res) => {
+  const articleId = req.params.id;
+  const pageContent = await notion.getArticleContnet(articleId);
   res.send(pageContent);
 });
 
